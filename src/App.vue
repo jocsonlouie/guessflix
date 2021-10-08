@@ -1,30 +1,49 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <Loader v-if="load" />
+  <Header />
+  <router-view v-slot="{ Component }">
+    <transition name="route" mode="out-in">
+      <component :is="Component"></component>
+    </transition>
+  </router-view>
+  <Footer />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Header from "@/components/Header";
+import Loader from "@/components/Loader";
+import Footer from "@/components/Footer.vue";
+
+export default {
+  data: () => {
+    return {
+      load: false,
+    };
+  },
+  components: {
+    Header,
+    Loader,
+    Footer,
+  },
+};
+</script>
+
+<style scoped>
+.route-enter-from {
+  opacity: 0;
+  transform: scale(1);
 }
 
-#nav {
-  padding: 30px;
+.route-enter-active {
+  transition: all 0.3s ease-out;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.route-leave-to {
+  opacity: 0;
+  transform: scale(1.1);
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.route-leave-active {
+  transition: all 0.3s ease-in;
 }
 </style>

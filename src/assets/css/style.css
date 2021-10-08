@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    /* -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;  detailed yun ng game eh tsaka ano makukuha for the game (rewrds) END OF THE WORLD NAAA */
+}
+
+body {
+    background-color: #141414;
+    color: white;
+    overflow-x: hidden;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.router-link-active {
+    font-weight: 800;
+}
+
+.option-correct {
+    background-color: rgba(16, 185, 129, 1) !important;
+}
+
+.option-wrong {
+    background-color: rgba(220, 38, 38, 1) !important;
+}
+
+.icon-medal {
+    display: block !important;
+}
+
+.icon-broken {
+    display: block !important;
+}
