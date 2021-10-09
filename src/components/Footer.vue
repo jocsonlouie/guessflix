@@ -74,8 +74,18 @@
         <i class="flex fab fa-linkedin text-red-500"></i>
       </button>
     </div>
-    <div class="py-5 mx-auto text-white">
-      <ul class="hidden md:gap-2 gap-1 ml-6 md:flex font-small">
+    <div class="py-5 md:mx-auto text-white w-full">
+      <ul
+        class="
+          md:gap-2
+          gap-1
+          flex flex-row flex-wrap
+          font-small
+          w-full
+          text-center
+          justify-center
+        "
+      >
         <li>
           <router-link to="/"> Home |</router-link>
         </li>

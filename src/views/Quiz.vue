@@ -1,13 +1,13 @@
 <template>
-  <div class="overflow-x-hidden">
+  <div class="overflow-hidden">
     <Loader v-if="quizLoader" />
     <div
       class="
         quiz-screen
-        h-screen
+        md:h-screen
         bg-gray-600
         md:px-12
-        px-6
+        px-1
         flex flex-col
         justify-center
       "
@@ -67,8 +67,12 @@
                 md:text-2xl
                 text-xl
                 md:mt-5
+                md:flex-row
                 mt-3
                 mx-auto
+                flex-col
+                justify-center
+                items-center
               "
             >
               <div class="text-yellow-300">★★★★★</div>
@@ -238,7 +242,7 @@
               "
               v-if="endOfQuiz"
             >
-              <div v-if="score >= 30" class="w-full max-w-2xl">
+              <div v-if="score >= 80" class="w-full max-w-2xl">
                 <h2 class="text-4xl mt-5 text-white text-center font-bold">
                   Congratulations!🎉
                 </h2>
@@ -246,13 +250,14 @@
                   What a true Film master! Here's your certificate as promise!
                 </h2>
                 <div class="flex md:gap-5 gap-3">
-                  <a href="/quiz" class="w-1/2">
+                  <div class="w-1/2">
                     <Button
                       title="Play Again"
                       icon="fas fa-play"
                       type="btn-info md:mt-5 mt-3 w-full"
+                      @click="reload"
                     />
-                  </a>
+                  </div>
                   <Button
                     @click="certificateModal = !certificateModal"
                     title="View Certificate"
@@ -262,7 +267,7 @@
                   />
                 </div>
               </div>
-              <div v-if="score < 30">
+              <div v-if="score < 80">
                 <h2 class="text-4xl mt-5 text-white text-center font-bold">
                   Nice try!
                 </h2>
@@ -270,17 +275,16 @@
                   Click the button below to seek revenge!
                 </h2>
                 <div class="flex md:gap-5 gap-3">
-                  <a href="/quiz" class="w-full">
-                    <Button
-                      title="Try Again"
-                      icon="fas fa-play"
-                      type="btn-info md:mt-5 mt-3 w-full"
-                    />
-                  </a>
+                  <Button
+                    title="Try Again"
+                    icon="fas fa-play"
+                    type="btn-info md:mt-5 mt-3 w-full"
+                    @click="reload"
+                  />
                 </div>
               </div>
             </div>
-            <div class="md:px-12 px-6 pt-8 py-6 black-bg" v-else>
+            <div class="md:px-12 px-6 pt-8 py-6 black-bg h-auto" v-else>
               <h2
                 class="md:text-4xl text-2xl text-white font-bold"
                 v-html="currentQuestion.question"
@@ -304,8 +308,8 @@
                     text-white
                     bg-white bg-opacity-50
                     opacity-100
-                    hover:opacity-50
-                    transition-opacity
+                    md:hover:opacity-50
+                    md:transition-opacity
                   "
                   :data-key="item"
                   v-for="(choice, item) in currentQuestion.choices"
@@ -314,7 +318,7 @@
                   @click="onOptionClicked(choice, item)"
                   :v-html="choice"
                 >
-                  {{ choice }}
+                  <div v-html="choice"></div>
                   <i class="fas fa-medal hidden"></i>
                   <i class="fas fa-heart-broken hidden"></i>
                 </div>
@@ -369,7 +373,6 @@ export default {
       canClick = true;
       if (questions.length > questionCounter.value) {
         //load
-        console.log("" + questions.length + " " + questionCounter.value);
         timer.value = 100;
         currentQuestion.value = questions[questionCounter.value];
         console.log("current ques", currentQuestion.value);
@@ -401,11 +404,9 @@ export default {
         const divContainer = itemsRef[item];
         const optionID = item + 1;
         if (currentQuestion.value.answer == optionID) {
-          console.log("You are correct bitch!");
           score.value += 10;
           divContainer.classList.add("option-correct");
         } else {
-          console.log("You are wrong bitch!");
           divContainer.classList.add("option-wrong");
         }
         timer.value = 100;
@@ -413,7 +414,6 @@ export default {
 
         // go to next ques
         clearSelected(divContainer);
-        console.log(choice, item);
       } else {
         console.log("cant select");
       }
@@ -438,8 +438,6 @@ export default {
     const checkScore = function () {
       if (score.value > parseInt(localStorage.getItem(STORAGE_KEY))) {
         localStorage.setItem(STORAGE_KEY, score.value);
-      } else {
-        console.log("error daffuk");
       }
     };
 
@@ -476,10 +474,7 @@ export default {
 
         // loader.value = false;
 
-        console.log("ew what", newQuestions);
-
         questions = newQuestions;
-        console.log("new formatted ques", questions);
         loadQuestion();
         countDownTimer();
         quizLoader.value = false;
@@ -488,9 +483,12 @@ export default {
       }
     };
 
+    const reload = function () {
+      location.reload();
+    };
+
     onMounted(() => {
       // fetchQuestionsFromServer();
-      console.log(localStorage.getItem(STORAGE_KEY));
       if (localStorage.getItem(STORAGE_KEY) == null) {
         localStorage.setItem(STORAGE_KEY, "0");
       } else {
@@ -512,6 +510,7 @@ export default {
       optionChosen,
       endOfQuiz,
       highestscore,
+      reload,
     };
   },
   components: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-20 flex lg:px-12 px-6 flex-col justify-center">
+  <div class="pt-20 flex lg:px-12 flex-col justify-center overflow-hidden">
     <div class="grid-container">
       <div
         class="
@@ -50,204 +50,210 @@
       </div>
     </div>
 
-    <h1 class="mt-10 text-2xl font-bold md-text center">Meet the Developers</h1>
-    <div
-      class="
-        flex-container flex
-        2xl:flex-nowrap
-        flex-wrap
-        gap-20
-        mt-3
-        overflow-y-hidden overflow-x-scroll
-      "
-    >
+    <div class="px-2">
+      <h1 class="mt-10 text-2xl font-bold md-text center">
+        Meet the Developers
+      </h1>
       <div
         class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-20
-          md:ml-16
-          ml-10
-          md:grid-cols-2
+          flex-container flex
+          2xl:flex-nowrap
+          flex-wrap
+          md:gap-20
+          gap-5
+          mt-3
+          overflow-y-hidden overflow-x-scroll
         "
       >
-        <span class="num">1</span
-        ><img
-          src="@/assets/luwi.jpg"
-          alt=""
-          class="w-full h-full rounded bg-white"
-        />
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-20
+            md:ml-16
+            ml-0
+            md:grid-cols-2
+          "
+        >
+          <span class="num">1</span
+          ><img
+            src="@/assets/luwi.jpg"
+            alt=""
+            class="w-full md:h-full rounded bg-white"
+          />
+        </div>
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-10
+            md:ml-16
+            ml-0
+            md:grid-cols-2
+          "
+        >
+          <span class="num">2</span
+          ><img
+            src="https://i.ibb.co/wYh3w1J/tin.png"
+            alt=""
+            class="w-full md:h-full rounded bg-white"
+          />
+        </div>
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-10
+            md:ml-16
+            ml-0
+            md:grid-cols-2
+          "
+        >
+          <span class="num">3</span
+          ><img
+            src="https://tip.instructure.com/files/5112820/download?download_frd=1&verifier=ihOhMXts4yqYF2RahDLQ42WvHTDvNpO9Eq8BHMOh"
+            alt=""
+            class="w-full md:h-full rounded bg-white"
+          />
+        </div>
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-10
+            md:ml-16
+            ml-0
+            md:grid-cols-2
+          "
+        >
+          <span class="num">4</span
+          ><img
+            src="@/assets/redd.png"
+            alt=""
+            class="w-full md:h-full rounded bg-white"
+          />
+        </div>
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-10
+            md:ml-16
+            ml-0
+            md:grid-cols-2
+          "
+        >
+          <span class="num">5</span
+          ><img
+            src="https://i.ibb.co/ZcwgTbw/erry.jpg"
+            alt=""
+            class="w-full md:h-full rounded bg-white"
+          />
+        </div>
       </div>
+      <h1 class="mt-10 text-2xl font-bold">Tech Stack</h1>
       <div
         class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-10
-          md:ml-16
-          ml-10
-          md:grid-cols-2
+          flex-container flex
+          2xl:flex-nowrap
+          flex-wrap
+          md:gap-20
+          gap-5
+          mt-3
+          overflow-y-hidden overflow-x-scroll
+          mb-10
         "
       >
-        <span class="num">2</span
-        ><img
-          src="https://i.ibb.co/wYh3w1J/tin.png"
-          alt=""
-          class="w-full h-full rounded bg-white"
-        />
-      </div>
-      <div
-        class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-10
-          md:ml-16
-          ml-10
-          md:grid-cols-2
-        "
-      >
-        <span class="num">3</span
-        ><img
-          src="https://tip.instructure.com/files/5112820/download?download_frd=1&verifier=ihOhMXts4yqYF2RahDLQ42WvHTDvNpO9Eq8BHMOh"
-          alt=""
-          class="w-full h-full rounded bg-white"
-        />
-      </div>
-      <div
-        class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-10
-          md:ml-16
-          ml-10
-          md:grid-cols-2
-        "
-      >
-        <span class="num">4</span
-        ><img
-          src="@/assets/redd.png"
-          alt=""
-          class="w-full h-full rounded bg-white"
-        />
-      </div>
-      <div
-        class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-10
-          md:ml-16
-          ml-10
-          md:grid-cols-2
-        "
-      >
-        <span class="num">5</span
-        ><img
-          src="https://i.ibb.co/ZcwgTbw/erry.jpg"
-          alt=""
-          class="w-full h-full rounded bg-white"
-        />
-      </div>
-    </div>
-    <h1 class="mt-10 text-2xl font-bold">Tech Stack</h1>
-    <div
-      class="
-        flex-container flex
-        2xl:flex-nowrap
-        flex-wrap
-        gap-20
-        mt-3
-        overflow-y-hidden overflow-x-scroll
-        mb-10
-      "
-    >
-      <div
-        class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-20
-          md:ml-16
-          ml-10
-        "
-      >
-        <span class="num">0</span
-        ><img
-          src="@/assets/vue-pic.png"
-          alt=""
-          class="w-full h-full object-cover rounded bg-white"
-        />
-      </div>
-      <div
-        class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-10
-          md:ml-16
-          ml-10
-        "
-      >
-        <span class="num">1</span>
-        <img
-          src="@/assets/tailwind-pic.png"
-          alt=""
-          class="w-full h-full object-cover rounded bg-white"
-        />
-      </div>
-      <div
-        class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-10
-          md:ml-16
-          ml-10
-        "
-      >
-        <span class="num">2</span>
-        <img
-          src="@/assets/opentrivia-pic.png"
-          alt=""
-          class="w-full h-full object-cover rounded bg-white"
-        />
-      </div>
-      <div
-        class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-10
-          md:ml-16
-          ml-10
-        "
-      >
-        <span class="num">3</span
-        ><img
-          src="@/assets/unsplash-pic.png"
-          alt=""
-          class="w-full h-full rounded object-cover bg-white"
-        />
-      </div>
-      <div
-        class="
-          flex-item flex
-          justify-center
-          items-center
-          lg:ml-10
-          md:ml-16
-          ml-10
-        "
-      >
-        <span class="num">4</span
-        ><img
-          src="@/assets/js-cookie-pic.png"
-          alt=""
-          class="w-full h-full ite"
-        />
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-20
+            md:ml-16
+            ml-10
+          "
+        >
+          <span class="num">0</span
+          ><img
+            src="@/assets/vue-pic.png"
+            alt=""
+            class="w-full md:h-full object-cover rounded bg-white"
+          />
+        </div>
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-10
+            md:ml-16
+            ml-10
+          "
+        >
+          <span class="num">1</span>
+          <img
+            src="@/assets/tailwind-pic.png"
+            alt=""
+            class="w-full md:h-full object-cover rounded bg-white"
+          />
+        </div>
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-10
+            md:ml-16
+            ml-10
+          "
+        >
+          <span class="num">2</span>
+          <img
+            src="@/assets/opentrivia-pic.png"
+            alt=""
+            class="w-full md:h-full object-cover rounded bg-white"
+          />
+        </div>
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-10
+            md:ml-16
+            ml-10
+          "
+        >
+          <span class="num">3</span
+          ><img
+            src="@/assets/unsplash-pic.png"
+            alt=""
+            class="w-full md:h-full rounded object-cover bg-white"
+          />
+        </div>
+        <div
+          class="
+            flex-item flex
+            justify-center
+            items-center
+            lg:ml-10
+            md:ml-16
+            ml-10
+          "
+        >
+          <span class="num">4</span
+          ><img
+            src="@/assets/js-cookie-pic.png"
+            alt=""
+            class="w-full md:h-full"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -324,7 +330,11 @@ export default {
 @media only screen and (max-width: 767px) {
   .flex-item {
     width: 450px;
-    height: 350px;
+    height: 200px;
+  }
+
+  .num {
+    transform: scale(1) !important;
   }
 }
 
@@ -332,6 +342,7 @@ export default {
   position: relative;
   z-index: 1;
   margin-left: -1.5rem;
+  height: 200px;
 }
 
 .num {

@@ -1,8 +1,19 @@
 <template>
   <div class="overflow-x-hidden">
-    <div class="flex flex-cols about-screen lg:p-64 md:p-52 p-28">
-      <div class="mx-auto p-4 text-center bg-black bg-opacity-40">
-        <h1 class="text-white font-semibold text-5xl">
+    <div class="flex flex-cols about-screen lg:p-64 md:p-52 py-20 px-2">
+      <div
+        class="
+          mx-auto
+          p-8
+          text-center
+          bg-black bg-opacity-40
+          max-w-3xl
+          backdrop-filter backdrop-blur-md
+          border border-white border-opacity-30
+          rounded
+        "
+      >
+        <h1 class="text-white font-semibold md:text-5xl text-2xl">
           GUESSFLIX: A Trivia Quiz Game for International and Local Films
         </h1>
         <p class="mt-4 text-lg text-gray-300">
@@ -25,13 +36,16 @@
             md:ml-16
             ml-10
             md:grid-cols-2
+            px-2
+            md:pt-0
+            pt-12
           "
         >
-          <span class="num lg:ml-20 md:ml-16 ml-10">G</span
+          <span class="num lg:ml-20 md:ml-16 ml-6">G</span
           ><img
             src="https://i.ibb.co/XzQGCbs/netflix-image.jpg"
             alt=""
-            class="w-full h-full rounded bg-white"
+            class="w-full h-full ml-5 rounded bg-white"
             style="max-width: 18rem"
           />
         </div>
@@ -53,7 +67,7 @@
                 text-red-50
               "
             ></div>
-            <h3 class="text-4xl text-center uppercase font-bold">
+            <h3 class="md:text-4xl text-2xl text-center uppercase font-bold">
               Game Mechanics and Instructions
             </h3>
           </div>
@@ -174,7 +188,9 @@
       </div>
     </div>
     <!-- end 2nd portion -->
-    <h3 class="text-4xl text-center uppercase font-bold">Scoring System</h3>
+    <h3 class="md:text-4xl text-2xl text-center uppercase font-bold">
+      Scoring System
+    </h3>
     <div class="flex flex-wrap py-10">
       <div
         class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4"
@@ -183,7 +199,8 @@
         <div class="px-6">
           <h3
             class="
-              text-4xl
+              md:text-4xl
+              text-2xl
               uppercase
               font-bold
               text-transparent
@@ -197,9 +214,9 @@
             CONGRATULATIONS!
           </h3>
           <div class="pt-6 text-center">
-            <h5 class="text-xl font-bold">30 and above</h5>
+            <h5 class="text-xl font-bold">80 and above</h5>
             <p class="mt-1 text-sm text-gray-300 uppercase font-semibold">
-              Congratulations you will receive an award
+              Congratulations you will receive an exclusive certificate!
             </p>
           </div>
         </div>
@@ -211,7 +228,8 @@
         <div class="px-6">
           <h3
             class="
-              text-4xl
+              md:text-4xl
+              text-2xl
               uppercase
               font-bold
               text-transparent
@@ -225,9 +243,9 @@
             NICE TRY!
           </h3>
           <div class="pt-6 text-center">
-            <h5 class="text-xl font-bold">Below 30</h5>
+            <h5 class="text-xl font-bold">Below 80</h5>
             <p class="mt-1 text-sm text-gray-300 uppercase font-semibold">
-              Nice Try
+              Nice Try!
             </p>
           </div>
         </div>
@@ -239,7 +257,8 @@
         <div class="px-6">
           <h3
             class="
-              text-4xl
+              md:text-4xl
+              text-2xl
               uppercase
               font-bold
               text-transparent
@@ -284,5 +303,16 @@ export default {
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: #595959;
   transform: scale(1.4);
+}
+
+@media only screen and (max-width: 767px) {
+  .num {
+    font-size: 10rem;
+    font-weight: 600;
+    color: black;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #595959;
+    transform: scale(1.2);
+  }
 }
 </style>

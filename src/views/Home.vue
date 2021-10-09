@@ -32,7 +32,7 @@
       </div>
 
       <div class="flex md:gap-4 gap-2 md:text-2xl text-xl md:mt-5 mt-3">
-        <div>★★★★★</div>
+        <div class="text-yellow-300">★★★★★</div>
         <div>2021</div>
         <div>10 Questions</div>
       </div>
@@ -71,9 +71,12 @@
               overscroll-y-auto
               inset-0
               flex
-              md:justify-center md:items-center
+              md:justify-center
+              md:items-center
               justify-start
               items-start
+              md:mt-0
+              mt-20
             "
           >
             <div
@@ -107,7 +110,8 @@
                     flex
                     items-center
                     hero-img-top
-                    px-12
+                    md:px-12
+                    px-6
                     py-6
                     text-3xl
                     font-semibold
@@ -124,7 +128,7 @@
                     </h2>
                   </div>
                 </div>
-                <div class="px-12 pb-12">
+                <div class="md:px-12 px-6 pb-12">
                   <h2 class="justify-center text-justify">
                     GuessFlix is a game that will test your limits in the
                     knowledge of Films. It is a quiz game wherein trivia from
@@ -136,7 +140,7 @@
                     friends and compete with your scores!
                   </h2>
                 </div>
-                <div class="px-12 pb-12">
+                <div class="md:px-12 px-6 pb-12">
                   <h6 class="justify-center text-justify font-small">
                     To know about the game, click the button below.
                   </h6>
